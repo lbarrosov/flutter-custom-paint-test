@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_custom_paint_test/SplashPainter/SplashPainter.dart';
+import 'package:flutter_custom_paint_test/CustomSplash/CustomSplashWidget.dart';
 
 void main() => runApp(MyApp());
 
@@ -40,15 +40,7 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: CustomPaint(
-        painter: SplashPainter(),
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[Text("test splash")],
-          ),
-        ),
-      ),
+      body: Center(child: CustomSplashWidget()),
     );
   }
 }
