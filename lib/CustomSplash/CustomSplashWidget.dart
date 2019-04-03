@@ -60,7 +60,7 @@ class CustomSplashState extends State<CustomSplashWidget> with SingleTickerProvi
               Container(
                 height: 250.0 * (1.3 - _factionTime),
                 width: 250.0 * (1.3 - _factionTime),
-                child: Image.network("https://cdn4.iconfinder.com/data/icons/ironman_lin/512/ironman_III.png"))),
+                child: Image.asset("assets/ironman.png"))),
             )
           ],
         ),
