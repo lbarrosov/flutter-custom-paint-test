@@ -4,8 +4,9 @@ import 'package:flutter_custom_paint_test/CustomSplash/SplashPainter.dart';
 class CustomSplashWidget extends StatefulWidget{
 
   final String imageSrc;
+  VoidCallback  onTapCustom;
 
-  CustomSplashWidget({this.imageSrc});
+  CustomSplashWidget({this.imageSrc, this.onTapCustom});
 
   @override
   State<StatefulWidget> createState() {
@@ -19,6 +20,7 @@ class CustomSplashState extends State<CustomSplashWidget> with SingleTickerProvi
 
   double _factionTime = 0.0;
   Animation<double> animation;
+  int numberOfClickToJumpToNextScreen = 0;
 
   @override
   void initState() {
@@ -62,10 +64,19 @@ class CustomSplashState extends State<CustomSplashWidget> with SingleTickerProvi
             //Text("_fractionTime: $_factionTime"),
             Positioned(top: 0.0, left: 0.0, right: 0.0, bottom: 0.0,
               child: Center(child:
-              Container(
-                height: 250.0 * (1.3 - _factionTime),
-                width: 250.0 * (1.3 - _factionTime),
+              GestureDetector(
+                onTap: (){
+                  numberOfClickToJumpToNextScreen++;
+                  print("Numb to jump to next screen $numberOfClickToJumpToNextScreen");
+                  if(numberOfClickToJumpToNextScreen == 10){
+                      widget.onTapCustom();
+                  }
+                },
+                child: Container(
+                height: 250.0 * (1.3 - _factionTime) * (0.9 + 0.1 * numberOfClickToJumpToNextScreen),
+                width: 250.0 * (1.3 - _factionTime) * (0.9 + 0.1 * numberOfClickToJumpToNextScreen),
                 child: Image.asset(widget.imageSrc))),
+              ),
             )
           ],
         ),

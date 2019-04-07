@@ -40,7 +40,11 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Center(child: CustomSplashWidget(imageSrc: "assets/ironman.png",)),
+      body: Center(child: CustomSplashWidget(imageSrc: "assets/ironman.png", onTapCustom: (){myOnTap();},)),
     );
+  }
+
+  void myOnTap(){
+    print("My on tap main.dart ${DateTime.now()}");
   }
 }
