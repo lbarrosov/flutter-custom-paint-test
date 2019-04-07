@@ -40,7 +40,7 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Center(child: CustomSplashWidget()),
+      body: Center(child: CustomSplashWidget(imageSrc: "assets/ironman.png",)),
     );
   }
 }

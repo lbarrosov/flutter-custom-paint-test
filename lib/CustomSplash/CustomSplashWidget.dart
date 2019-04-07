@@ -2,6 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_custom_paint_test/CustomSplash/SplashPainter.dart';
 
 class CustomSplashWidget extends StatefulWidget{
+
+  final String imageSrc;
+
+  CustomSplashWidget({this.imageSrc});
+
   @override
   State<StatefulWidget> createState() {
     
@@ -49,7 +54,7 @@ class CustomSplashState extends State<CustomSplashWidget> with SingleTickerProvi
   Widget build(BuildContext context) {
     
     return CustomPaint(
-      painter: SplashPainter(_factionTime),
+      painter: SplashPainter(fractionTime: _factionTime),
       child: Center(
         child: Stack(
           children: <Widget>[
@@ -60,7 +65,7 @@ class CustomSplashState extends State<CustomSplashWidget> with SingleTickerProvi
               Container(
                 height: 250.0 * (1.3 - _factionTime),
                 width: 250.0 * (1.3 - _factionTime),
-                child: Image.asset("assets/ironman.png"))),
+                child: Image.asset(widget.imageSrc))),
             )
           ],
         ),

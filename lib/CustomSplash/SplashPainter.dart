@@ -4,7 +4,7 @@ class SplashPainter extends CustomPainter {
 
   double fractionTime;
 
-  SplashPainter(this.fractionTime);
+  SplashPainter({Key key, this.fractionTime});
 
   @override
   void paint(Canvas canvas, Size size) {
